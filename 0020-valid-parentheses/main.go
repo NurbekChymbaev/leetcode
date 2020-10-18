@@ -12,10 +12,10 @@ func isValid(s string) bool {
 		return false
 	}
 
-	var pairs = map[string]string{
-		")": "(",
-		"]": "[",
-		"}": "{",
+	var pairs = map[rune]rune{
+		')': '(',
+		']': '[',
+		'}': '{',
 	}
 
 	var stack []string
@@ -24,11 +24,10 @@ func isValid(s string) bool {
 
 	for _, char := range s[1:] {
 		n := len(stack) - 1
-		cur := string(char)
-		if n >= 0 && stack[n] == pairs[cur] {
+		if n >= 0 && stack[n] == string(pairs[char]) {
 			stack = stack[:n]
 		} else {
-			stack = append(stack, cur)
+			stack = append(stack, string(char))
 		}
 	}
 	return len(stack) == 0
