@@ -23,10 +23,13 @@ func isValid(s string) bool {
 	stack = append(stack, string(s[0]))
 
 	for _, char := range s[1:] {
+		// сравниваем первый элемент стека с закрывающим текущим символом
 		n := len(stack) - 1
 		if n >= 0 && stack[n] == string(pairs[char]) {
+			// если символ закрывает элемент, то удаляем символ из стека
 			stack = stack[:n]
 		} else {
+			// иначе добавляем символ в стек
 			stack = append(stack, string(char))
 		}
 	}
