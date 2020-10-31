@@ -10,4 +10,5 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 	fmt.Println("bbbbbl", lengthOfLongestSubstring("bbbbb"))
 	fmt.Println("pwwkew", lengthOfLongestSubstring("pwwkew"))
 	fmt.Println("", lengthOfLongestSubstring(""))
+	fmt.Println("tmmzuxt", lengthOfLongestSubstring("tmmzuxt"))
 }
